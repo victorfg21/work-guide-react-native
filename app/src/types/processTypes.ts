@@ -1,12 +1,12 @@
-export interface Process {
+export interface IProcessData {
     title: string
     intervention: string
     validation: string
     observation: string
-    items: Item[]
+    items: IItemData[]
 }
 
-export interface Item {
+export interface IItemData {
     sequence: number
     equipment: string
     tag: string

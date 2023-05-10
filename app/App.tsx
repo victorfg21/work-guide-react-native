@@ -1,5 +1,4 @@
 import Navigation from "./src/components/navigation";
-import { theme } from "./src/theme";
 import { useFonts, Inter_400Regular, Inter_500Medium } from '@expo-google-fonts/inter';
 import * as SplashScreen from 'expo-splash-screen';
 import React from "react";
@@ -24,10 +23,6 @@ export default function App() {
     Inter_500Medium,
   });
 
-  /*if (!fontsLoaded) {
-    return null;
-  }*/
-
   if (isLoading || !listProcess)
     return (
       <View style={{ flex: 1 }}>
@@ -39,7 +34,7 @@ export default function App() {
 
   if (!isLoading)
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: '#fff' }}>
         <Navigation listProcess={listProcess} />
         <StatusBar backgroundColor="transparent" translucent />
       </View>

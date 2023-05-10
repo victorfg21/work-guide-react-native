@@ -12,7 +12,6 @@ function LogoTitle() {
         <Image style={{ width: 180, height: 50 }} source={Logo} />
     );
 }
-
 const Stack = createNativeStackNavigator();
 
 interface Props {
@@ -22,7 +21,7 @@ interface Props {
 export default function Navigation({ listProcess }: Props) {
     if (listProcess)
         return (
-            <NavigationContainer >
+            <NavigationContainer>
                 <Stack.Navigator initialRouteName="Home">
                     <Stack.Screen name="Home" component={HomeScreen} initialParams={{ listProcess: listProcess }} options={{ headerTitle: LogoTitle }} />
                     {listProcess.map(process => (

@@ -11,15 +11,19 @@ export default function HomeScreen({ navigation, route }: any) {
     const { listProcess }: Props = route.params;
     return (
         <View style={styles.container}>
-            <Text style={styles.titleText}>Matriz de Bloqueio Caldeira de Recuperação</Text>
+            <Text style={styles.titleTextCenter}>Matriz de Bloqueio Caldeira de Recuperação</Text>
             {listProcess && listProcess.map(process => (
-                <Button
-                    key={process.title}
-                    title={process.title}
-                    onPress={() => navigation.push(process.title, { process: process })}
+                <>
+                    <View style={styles.buttonView}>
+                        <Button
+                            key={process.title}
+                            title={process.title}
+                            onPress={() => navigation.push(process.title, { process: process })}
 
-                />
+                        />
+                    </View >
+                </>
             ))}
-        </View>
+        </View >
     );
 }
